@@ -1,5 +1,6 @@
 // Need G4P library
 //ola k ase
+//Se escribe "¡Hola! ¿qué hace?"
 import g4p_controls.*;
 int anterior;
 boolean error1;
