@@ -18,7 +18,6 @@ public void txt_comando_change(GTextField source, GEvent event) { //_CODE_:txt_c
   //println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
 } //_CODE_:txt_comando:789189:
 
-<<<<<<< HEAD
 public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:818342:
   //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
   int comando=Integer.parseInt(txt_comando.getText());
@@ -277,20 +276,10 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
     case 0:
          txt_editor.setText(cadenaeditor + "0");
      break;
-=======
-public void btn_enter_c(GButton source, GEvent event) { //_CODE_:btn_enter:818342:
-  //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
-  int comando=Integer.parseInt(txt_comando.getText());
-  switch(comando){
-    case 0:
-     txt_editor.setText("0");
-    break;
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
     case 1:
       //Acciones cuando se inserta 1
     break;
     case 2:
-<<<<<<< HEAD
       txt_editor.setText(cadenaeditor + "\n Void Setup( ) {");
       error3=true;
       txt_error.setText("presiona cincuenta");
@@ -368,58 +357,12 @@ public void btn_enter_c(GButton source, GEvent event) { //_CODE_:btn_enter:81834
     break;
     case 27:
       txt_editor.setText(cadenaeditor + "int ");
-=======
-      txt_editor.setText("Void Setup( ) {");
-    break;
-    case 3:
-      txt_editor.setText("}");
-    break;
-    case 6:
-      txt_editor.setText("Void Main( ){");
-    break;
-    case 7:
-      txt_editor.setText("}");
-    break;
-     case 8:
-      txt_editor.setText("Habilitar braile");
-    break;
-   case 9:
-      txt_editor.setText("deshabilitar braile");
-    break;
-     case 15:
-      txt_editor.setText("nuevo programa");
-    break;
-    case 17:
-      txt_editor.setText("soundLine");
-    break;
-    case 18:
-      txt_editor.setText("soundVar");
-    break;
-    case 19:
-      txt_editor.setText("soundOper");
-    break;
-    case 20:
-      txt_editor.setText("=");
-    break;
-    case 21:
-      txt_editor.setText("+");
-    break;
-    case 22:
-      txt_editor.setText("-");
-    break;
-    case 23:
-      txt_editor.setText("*");
-    break;
-        case 24:
-      txt_editor.setText("/");
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
     break;
       case 31:
       txt_editor.setText("ENTER");
     break;
 
     //Los demás comandos
-<<<<<<< HEAD
     }
      }
    } 
@@ -452,21 +395,6 @@ public void panel2_Click1(GPanel source, GEvent event) { //_CODE_:Depurador:5146
 public void textfield1_change2(GTextField source, GEvent event) { //_CODE_:txt_error:439771:
   println("txt_error - GTextField event occured " + System.currentTimeMillis()%10000000 );
 } //_CODE_:txt_error:439771:
-=======
-   
- 
-    
-    
-  }
-  
-  
-  
-} //_CODE_:btn_enter:818342:
-
-public void txt_spelling_change(GTextArea source, GEvent event) { //_CODE_:txt_spelling:782485:
-  //println("textarea1 - GTextArea event occured " + System.currentTimeMillis()%10000000 );
-} //_CODE_:txt_spelling:782485:
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
 
 public void btn_run_click(GButton source, GEvent event) { //_CODE_:btn_run:931812:
   //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
@@ -490,11 +418,7 @@ public void createGUI(){
   G4P.setCursor(ARROW);
   if(frame != null)
     frame.setTitle("Proyecto I");
-<<<<<<< HEAD
   pnl_insert_comandos = new GPanel(this, 1, 0, 200, 600, "Inserción de comandos");
-=======
-  pnl_insert_comandos = new GPanel(this, 0, 0, 200, 600, "Inserción de comandos");
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
   pnl_insert_comandos.setCollapsible(false);
   pnl_insert_comandos.setDraggable(false);
   pnl_insert_comandos.setTextBold();
@@ -502,11 +426,7 @@ public void createGUI(){
   pnl_insert_comandos.setLocalColorScheme(GCScheme.GREEN_SCHEME);
   pnl_insert_comandos.setOpaque(true);
   pnl_insert_comandos.addEventHandler(this, "");
-<<<<<<< HEAD
   pnl_comando_insert = new GPanel(this, 9, 45, 180, 150, "Comando insertado");
-=======
-  pnl_comando_insert = new GPanel(this, 10, 50, 180, 150, "Comando insertado");
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
   pnl_comando_insert.setCollapsible(false);
   pnl_comando_insert.setDraggable(false);
   pnl_comando_insert.setTextBold();
@@ -520,7 +440,6 @@ public void createGUI(){
   btn_enter = new GButton(this, 89, 100, 80, 30);
   btn_enter.setTextBold();
   btn_enter.setText("Enter");
-<<<<<<< HEAD
   btn_enter.addEventHandler(this, "btn_enter_click");
   pnl_comando_insert.addControl(txt_comando);
   pnl_comando_insert.addControl(btn_enter);
@@ -549,17 +468,6 @@ public void createGUI(){
   pnl_insert_comandos.addControl(ckb_spelling);
   pnl_insert_comandos.addControl(panel1);
   pnl_insert_comandos.addControl(Depurador);
-=======
-  btn_enter.addEventHandler(this, "btn_enter_c");
-  pnl_comando_insert.addControl(txt_comando);
-  pnl_comando_insert.addControl(btn_enter);
-  txt_spelling = new GTextArea(this, 10, 250, 180, 250, G4P.SCROLLBARS_NONE);
-  txt_spelling.setLocalColorScheme(GCScheme.GOLD_SCHEME);
-  txt_spelling.setOpaque(true);
-  txt_spelling.addEventHandler(this, "txt_spelling_change");
-  pnl_insert_comandos.addControl(pnl_comando_insert);
-  pnl_insert_comandos.addControl(txt_spelling);
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
   pnl_ejecucion = new GPanel(this, 600, 0, 200, 600, "Ejecución");
   pnl_ejecucion.setCollapsible(false);
   pnl_ejecucion.setDraggable(false);
@@ -575,11 +483,7 @@ public void createGUI(){
   pnl_compilador.setText("Compilador");
   pnl_compilador.setOpaque(true);
   pnl_compilador.addEventHandler(this, "");
-<<<<<<< HEAD
   btn_run = new GButton(this, 21, 50, 80, 30);
-=======
-  btn_run = new GButton(this, 20, 50, 80, 30);
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
   btn_run.setTextBold();
   btn_run.setText("Run");
   btn_run.addEventHandler(this, "btn_run_click");
@@ -601,15 +505,11 @@ GPanel pnl_insert_comandos;
 GPanel pnl_comando_insert; 
 GTextField txt_comando; 
 GButton btn_enter; 
-<<<<<<< HEAD
 GCheckbox ckb_spelling; 
 GPanel panel1; 
 GTextField txt_spelling; 
 GPanel Depurador; 
 GTextField txt_error; 
-=======
-GTextArea txt_spelling; 
->>>>>>> 160bb588335740fd70de9d495629e0c0a053d09a
 GPanel pnl_ejecucion; 
 GPanel pnl_compilador; 
 GButton btn_run; 
