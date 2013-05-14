@@ -1,4 +1,5 @@
 // Need G4P library
+//ola k ase
 import g4p_controls.*;
 int anterior;
 boolean error1;
