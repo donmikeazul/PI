@@ -71,6 +71,7 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
              txt_editor.setText(cadenaeditor+cadenaspelling+ "\")");
              txt_error.setText("");
              txt_spelling.setText("");
+             ckb_spelling.setSelected(false);
                  }
                               }
                              }
@@ -85,8 +86,8 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
       
    if((soundpermite==true)&&(comando==9)){
        txt_editor.setText(cadenaeditor + cadenaspelling + ",");
-       txt_error.setText("seleccionando operador");
-       
+       txt_error.setText("seleccionando operador,21 suma,22 resta,23 multiplicacion,24 division");
+       operadorpermite=true;                                                                /////////////////////////
                                          }
     
   
@@ -271,7 +272,14 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
    if(permite==true){
    txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");
    } 
+     
    else{
+       if(operadorpermite==true){
+       txt_error.setText("seleccionando operador,21 suma,22 resta,23 multiplicacion,24 division");
+            if((comando==21)||(comando==22)||(comando==23)){operadorpermite=false;}
+       
+                              }
+     else{
     switch(comando){
     case 0:
          txt_editor.setText(cadenaeditor + "0");
@@ -365,6 +373,7 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
     //Los demás comandos
     }
      }
+        }
    } 
   
   }
