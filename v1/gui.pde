@@ -18,11 +18,21 @@ public void txt_comando_change(GTextField source, GEvent event) { //_CODE_:txt_c
   //println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
 } //_CODE_:txt_comando:789189:
 
+
+
 public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:818342:
   //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
+  
   int comando=Integer.parseInt(txt_comando.getText());
   String cadenaspelling = txt_spelling.getText();
   String cadenaeditor = txt_editor.getText();
+String[] arreglo= new String[3];
+arreglo[0]="var1";
+arreglo[1]="var2";
+arreglo[2]="resultado";
+
+if(finall==false){
+  
     if (comando==2){
    voidd=true;
    txt_error.setText("");
@@ -43,37 +53,105 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
       txt_error.setText("");
       txt_error.setText("nombra la variable");
       //txt_spelling.setText("");
-                  }
+                                     }
     
-   if(comando==8){                     
-      ckb_spelling.setSelected(true);
-      error2=false;
-      error1=false;
-      error3=false;
-      txt_error.setText("");
-                  }
+   //if(comando==8){                     
+     // ckb_spelling.setSelected(true);
+      //error2=false;
+      //error1=false;
+      //error3=false;
+      //txt_error.setText("");
+              //    }
   else{ 
     if(comando==9){
       if (soundpermite==false){
-        if(var1permite==false){
+        if(var1permite==false)  {
+         if(linepermite==false){
       ckb_spelling.setSelected(false);
       txt_editor.setText(cadenaeditor+cadenaspelling);
       txt_spelling.setText("");
       txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");
-      permite=true;}
+     // cadenaspelling=var1;
+      permite=true;
+                               }
+        else{
+         if(scanVarpermite==false){
+             if(linepermite2==false){
+       txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n");                  
+       txt_error.setText("18 abrir scanVar1"); 
+       ckb_spelling.setSelected(false);
+       txt_spelling.setText("");
+                                     }            
+                          else{
+       txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n");                  
+       txt_error.setText("18 abrir scanVar2"); 
+       ckb_spelling.setSelected(false);
+       txt_spelling.setText("");
+                            }
+                                 }
+                                                    
+                        else{
+       txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n"); 
+         if(jaja==false){                                                                                  /////////////////
+       txt_error.setText("17 abrir soundline2");
+       txt_spelling.setText("");
+       ckb_spelling.setSelected(false);
+       scanVarpermite=false;
+       linepermite2=true;
+       jaja=true;
+                        }
+          else{
+          txt_error.setText("19 abrir soundoper");
+          txt_spelling.setText("");
+          ckb_spelling.setSelected(false);
+          
+          }              
+                            }                            
+                       }
+
+                                }
         else{
           if(var2permite==false){
         txt_editor.setText(cadenaeditor+cadenaspelling+ ",");
         txt_error.setText("nombre variable 2");
         txt_spelling.setText("");
-             var2permite=true;}
-             else{
-             txt_editor.setText(cadenaeditor+cadenaspelling+ "\")");
-             txt_error.setText("");
+        var2permite=true;
+                                }
+             else{   
+         if(linepermite3==false){      
+             txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");      
+             txt_error.setText("17 abrir soundline");                                                                     ////////////////////////////////////////////             
              txt_spelling.setText("");
              ckb_spelling.setSelected(false);
+                                 }
+               else{
+                 if(varsoundpermite==false){
+                 txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");
+                 txt_error.setText("17 abrir soundlinen");             ////////////////////////////////////
+                 ckb_spelling.setSelected(false);
+                 txt_spelling.setText("");
+                 varsoundpermite=true;
+                                            }
+                   else{
+                 if(varsoundpermite2==false){    
+                 txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");
+                 txt_error.setText("16 abrir soundVar"); 
+                 txt_spelling.setText("");
+                 ckb_spelling.setSelected(false);
+                 varsoundpermite2=true;
+                                             }
+                  else{
+                 txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n}");
+                 txt_spelling.setText("");
+                 finall=true;
+                 
+                      }                           
+                        }                         
+                 
+                   }                  
+             
                  }
-                              }
+             }
                              }
           else{
             txt_editor.setText(cadenaeditor+cadenaspelling);
@@ -92,11 +170,11 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
     
   
   if(comando==51){
-    txt_editor.setText(cadenaeditor + " ;}\n");
+    txt_editor.setText(cadenaeditor + " ;}\nVoid Main( ){\n");
     ckb_spelling.setSelected(false);
     permite=false;
     txt_error.setText("");
-    txt_error.setText("19 abrir soundoper");
+    txt_error.setText("17 abrir soundline1");
                  }
                  
    if(comando==52){
@@ -105,16 +183,16 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
    permite=false;
    txt_error.setText("");
    txt_error.setText("nombra la variable");
-   }                          
+                  }                          
   
     if((error1==true)&&(error2==true)){
       if(error3==true){
          txt_error.setText("presiona cincuenta");
-          }
+                       }
           else{
   txt_error.setText("presiona ocho");
               }
-  }
+                                      }
   
    else{ //
   
@@ -268,17 +346,18 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
     //Los demás comandos   
   }
   
-  }else{
+  }
+  else{
    if(permite==true){
    txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");
-   } 
+                    } 
      
    else{
        if(operadorpermite==true){
        txt_error.setText("seleccionando operador,21 suma,22 resta,23 multiplicacion,24 division");
             if((comando==21)||(comando==22)||(comando==23)){operadorpermite=false;}
        
-                              }
+                                }
      else{
     switch(comando){
     case 0:
@@ -288,9 +367,14 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
       //Acciones cuando se inserta 1
     break;
     case 2:
+    if (voidd2==false){
       txt_editor.setText(cadenaeditor + "\n Void Setup( ) {");
       error3=true;
       txt_error.setText("presiona cincuenta");
+      voidd2=true;
+                      }
+    else{
+        }
     break;
     case 3:
       txt_editor.setText(cadenaeditor + "\n}");
@@ -307,18 +391,57 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
       //txt_editor.setText(cadenaeditor + "int");
     //break;
      case 15:
-      txt_editor.setText(cadenaeditor + "\nuevo programa");
+      txt_editor.setText(cadenaeditor + "nuevo programa");
+    break;
+    case 16:
+      txt_editor.setText(cadenaeditor + "soundVar(\" ");
+      ckb_spelling.setSelected(true);
     break;
     case 17:
+      if(linepermite3==false){
       txt_editor.setText(cadenaeditor + "soundLine(\"");
-      error1=true;
-      error2=true;
-      txt_error.setText("nombre de var resultado");
+                             }
+      else{
+      txt_editor.setText(cadenaeditor + "soundLine(\"");
+      ckb_spelling.setSelected(true);
+          }                       
+      error1=false;
+      error2=false;
+      error3=false;
+      linepermite=true;
+      ckb_spelling.setSelected(true);
+      
+      if(linepermite2==false){
+        txt_error.setText("nombre de var 1");
+                            }
+      else{
+            if(linepermite3==false){
+        txt_error.setText("nombre de var 2"); 
+        scanVarpermite2=true;
+        linepermite3=true;
+                                   }
+            else{
+        txt_error.setText("escribe...");
+        ckb_spelling.setSelected(true);
+                                                                  //////////////////////////////////
+                }                       
+          }
     break;
+    
     case 18:
-      txt_editor.setText(cadenaeditor + "soundVar(\"");
-      error1=true;
-      error2=true;
+      txt_editor.setText(cadenaeditor + "scanVar(\"");
+      txt_spelling.setText("");
+      scanVarpermite=true;
+      if(scanVarpermite2==false){
+      txt_error.setText("dame el valor 1");
+      
+                                }
+      else{
+      txt_error.setText("dame el valor 2");
+          }
+     // error1=true;
+      //error2=true;
+      ckb_spelling.setSelected(true);
     break;
     case 19:
       txt_editor.setText(cadenaeditor + "soundOper(\"");
@@ -383,6 +506,11 @@ public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:8
        txt_error.setText("presiona dos");
      }
   anterior=comando;
+  txt_comando.setText("");
+}//el if de final
+
+else{
+    }
 } //_CODE_:btn_enter:818342:
 
 public void checkbox1_clicked1(GCheckbox source, GEvent event) { //_CODE_:ckb_spelling:655534:
@@ -500,7 +628,7 @@ public void createGUI(){
   btn_stop.setTextBold();
   btn_stop.setText("Stop");
   btn_stop.addEventHandler(this, "btn_stop_click");
-  txt_editor = new GTextArea(this, 20, 100, 360, 400, G4P.SCROLLBARS_NONE);
+  txt_editor = new GTextArea(this, 17, 101, 360, 400, G4P.SCROLLBARS_NONE);
   txt_editor.setOpaque(true);
   txt_editor.addEventHandler(this, "txt_editor_change");
   pnl_compilador.addControl(btn_run);

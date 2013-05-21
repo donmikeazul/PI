@@ -5,11 +5,23 @@ boolean error1;
 boolean error2;
 boolean error3;
 boolean voidd;
+boolean voidd2;
 boolean permite;
 boolean soundpermite;
+boolean linepermite;
+boolean linepermite2;
+boolean linepermite3;
+boolean scanVarpermite;
+boolean scanVarpermite2;
+boolean varsoundpermite;
+boolean varsoundpermite2;
 boolean operadorpermite;
 boolean var1permite;
 boolean var2permite;
+boolean jaja;
+
+boolean finall;
+
 
 
 public void setup(){
