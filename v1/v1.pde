@@ -1,6 +1,8 @@
 // Need G4P library
 import g4p_controls.*;
 int anterior;
+int i;
+String stringAnterior;
 boolean error1;
 boolean error2;
 boolean error3;
@@ -19,8 +21,17 @@ boolean operadorpermite;
 boolean var1permite;
 boolean var2permite;
 boolean jaja;
-
 boolean finall;
+String[] programa= new String[7];
+String[] ArregloSoundLine= new String[6];
+String[] ArregloScanVar= new String[6];
+String[] ArregloSoundOper= new String[6];
+String[] ArregloSoundVar= new String[6];
+String[] ArregloVariables= new String[6];
+String[] ArregloValores= new String[6];
+//String[][] ArregloSoundOper = new String[4][4];
+int k=0;
+
 
 
 

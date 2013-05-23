@@ -18,18 +18,13 @@ public void txt_comando_change(GTextField source, GEvent event) { //_CODE_:txt_c
   //println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
 } //_CODE_:txt_comando:789189:
 
-
-
 public void btn_enter_click(GButton source, GEvent event) { //_CODE_:btn_enter:818342:
   //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
   
   int comando=Integer.parseInt(txt_comando.getText());
   String cadenaspelling = txt_spelling.getText();
   String cadenaeditor = txt_editor.getText();
-String[] arreglo= new String[3];
-arreglo[0]="var1";
-arreglo[1]="var2";
-arreglo[2]="resultado";
+
 
 if(finall==false){
   
@@ -52,6 +47,7 @@ if(finall==false){
       error3=false;
       txt_error.setText("");
       txt_error.setText("nombra la variable");
+      
       //txt_spelling.setText("");
                                      }
     
@@ -68,9 +64,11 @@ if(finall==false){
         if(var1permite==false)  {
          if(linepermite==false){
       ckb_spelling.setSelected(false);
+      ArregloVariables[k]=cadenaspelling; 
+     k++; 
       txt_editor.setText(cadenaeditor+cadenaspelling);
       txt_spelling.setText("");
-      txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");
+      txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");                                  /////////////////////////////////////////////////////////
      // cadenaspelling=var1;
       permite=true;
                                }
@@ -78,13 +76,15 @@ if(finall==false){
          if(scanVarpermite==false){
              if(linepermite2==false){
        txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n");                  
-       txt_error.setText("18 abrir scanVar1"); 
-       ckb_spelling.setSelected(false);
+       txt_error.setText("18 abrir scanVar1");                                                ///////////18 abrir scanvar1                  listo
+       ckb_spelling.setSelected(false); 
+       ArregloSoundLine[0]=cadenaspelling;                                                                                   
        txt_spelling.setText("");
                                      }            
                           else{
        txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n");                  
-       txt_error.setText("18 abrir scanVar2"); 
+       txt_error.setText("18 abrir scanVar2");                                                    //////////18 abrir scanvar2                 listo
+       ArregloSoundLine[1]=cadenaspelling; 
        ckb_spelling.setSelected(false);
        txt_spelling.setText("");
                             }
@@ -92,8 +92,9 @@ if(finall==false){
                                                     
                         else{
        txt_editor.setText(cadenaeditor+cadenaspelling+"\"); \n"); 
-         if(jaja==false){                                                                                  /////////////////
-       txt_error.setText("17 abrir soundline2");
+         if(jaja==false){                                                                                  
+       txt_error.setText("17 abrir soundline2");                                                  /////////////////17 abrir sounline2                          listo
+       ArregloScanVar[0]=cadenaspelling;
        txt_spelling.setText("");
        ckb_spelling.setSelected(false);
        scanVarpermite=false;
@@ -101,7 +102,8 @@ if(finall==false){
        jaja=true;
                         }
           else{
-          txt_error.setText("19 abrir soundoper");
+          txt_error.setText("19 abrir soundoperr");                                             /////////////19 abrir soundoper                  listo
+          ArregloScanVar[1]=cadenaspelling;
           txt_spelling.setText("");
           ckb_spelling.setSelected(false);
           
@@ -113,35 +115,40 @@ if(finall==false){
         else{
           if(var2permite==false){
         txt_editor.setText(cadenaeditor+cadenaspelling+ ",");
-        txt_error.setText("nombre variable 2");
+        txt_error.setText("nombre variable 22");
+        ArregloSoundOper[2]=cadenaspelling;                                                     ////nombre variable2                      listo
         txt_spelling.setText("");
         var2permite=true;
                                 }
              else{   
          if(linepermite3==false){      
              txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");      
-             txt_error.setText("17 abrir soundline");                                                                     ////////////////////////////////////////////             
+             txt_error.setText("17 abrir soundlinekk");                                    
              txt_spelling.setText("");
              ckb_spelling.setSelected(false);
                                  }
                else{
                  if(varsoundpermite==false){
                  txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");
-                 txt_error.setText("17 abrir soundlinen");             ////////////////////////////////////
+                 txt_error.setText("17 abrir soundlinen");                                     ///////////////////////                     listo
                  ckb_spelling.setSelected(false);
+                 ArregloSoundOper[3]=cadenaspelling;  
                  txt_spelling.setText("");
                  varsoundpermite=true;
                                             }
                    else{
                  if(varsoundpermite2==false){    
                  txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n");
-                 txt_error.setText("16 abrir soundVar"); 
+                 txt_error.setText("16 abrir soundVarrrrrr"); 
+                 ArregloSoundLine[2]=cadenaspelling;                               ////////////16 abrir soundline                listo
                  txt_spelling.setText("");
                  ckb_spelling.setSelected(false);
                  varsoundpermite2=true;
                                              }
                   else{
                  txt_editor.setText(cadenaeditor+cadenaspelling+ "\"); \n}");
+                 txt_error.setText("fin del programa");                                            //////////////      listo
+                 ArregloSoundVar[0]=cadenaspelling;
                  txt_spelling.setText("");
                  finall=true;
                  
@@ -164,8 +171,9 @@ if(finall==false){
       
    if((soundpermite==true)&&(comando==9)){
        txt_editor.setText(cadenaeditor + cadenaspelling + ",");
-       txt_error.setText("seleccionando operador,21 suma,22 resta,23 multiplicacion,24 division");
-       operadorpermite=true;                                                                /////////////////////////
+       txt_error.setText("seleccionandon operador,21 suma,22 resta,23 multiplicacion,24 division");
+       ArregloSoundOper[0]=cadenaspelling;
+       operadorpermite=true;                                                               
                                          }
     
   
@@ -349,15 +357,22 @@ if(finall==false){
   }
   else{
    if(permite==true){
-   txt_error.setText("presiona 51 para continuar\n presiona 52 para declarar otra variable");
+   txt_error.setText("presionasss 51 para continuar\n presiona 52 para declarar otra variable");
                     } 
      
    else{
        if(operadorpermite==true){
-       txt_error.setText("seleccionando operador,21 suma,22 resta,23 multiplicacion,24 division");
-            if((comando==21)||(comando==22)||(comando==23)){operadorpermite=false;}
-       
-                                }
+       txt_error.setText("seleccionando00 operador,21 suma,22 resta,23 multiplicacion,24 division");
+       if((comando==21)||(comando==22)||(comando==23)){
+                                  operadorpermite=false;
+         if(comando==21){                        
+         txt_spelling.setText(cadenaspelling + "+");
+                        }
+                                  
+                                                      }
+                                 
+                                                                                                                //////////////////////puto problema
+                                   }
      else{
     switch(comando){
     case 0:
@@ -396,6 +411,9 @@ if(finall==false){
     case 16:
       txt_editor.setText(cadenaeditor + "soundVar(\" ");
       ckb_spelling.setSelected(true);
+       txt_error.setText("jaja");
+      
+      programa[6]="7";                                        
     break;
     case 17:
       if(linepermite3==false){
@@ -413,17 +431,20 @@ if(finall==false){
       
       if(linepermite2==false){
         txt_error.setText("nombre de var 1");
+        programa[0]="1";                                       
                             }
       else{
             if(linepermite3==false){
         txt_error.setText("nombre de var 2"); 
         scanVarpermite2=true;
         linepermite3=true;
+        programa[2]="3";                                      
                                    }
             else{
         txt_error.setText("escribe...");
         ckb_spelling.setSelected(true);
-                                                                  //////////////////////////////////
+        programa[5]="6";
+                                                                  
                 }                       
           }
     break;
@@ -434,10 +455,11 @@ if(finall==false){
       scanVarpermite=true;
       if(scanVarpermite2==false){
       txt_error.setText("dame el valor 1");
-      
+      programa[1]="2";                                             
                                 }
       else{
       txt_error.setText("dame el valor 2");
+      programa[3]="4";                                            
           }
      // error1=true;
       //error2=true;
@@ -448,6 +470,7 @@ if(finall==false){
       ckb_spelling.setSelected(true);
       soundpermite=true;
       txt_error.setText("nombre de var resultado");
+      programa[4]="5";                                             
     break;
     case 20:
       txt_editor.setText(cadenaeditor + "=");
@@ -455,9 +478,11 @@ if(finall==false){
     case 21:
       txt_editor.setText(cadenaeditor + "+,");
       ckb_spelling.setSelected(true);
+      ArregloSoundOper[1]=cadenaspelling;                               
       txt_error.setText("nombre variable 1");
       soundpermite=false;
       var1permite=true;
+      txt_spelling.setText(" ");
     break;
     case 22:
       txt_editor.setText(cadenaeditor + "-,");
@@ -533,9 +558,48 @@ public void textfield1_change2(GTextField source, GEvent event) { //_CODE_:txt_e
   println("txt_error - GTextField event occured " + System.currentTimeMillis()%10000000 );
 } //_CODE_:txt_error:439771:
 
+public void txt_ejecucion_change(GTextField source, GEvent event) { //_CODE_:txt_ejecucion:440604:
+  println("textfield1 - GTextField event occured " + System.currentTimeMillis()%10000000 );
+} //_CODE_:txt_ejecucion:440604:
+
 public void btn_run_click(GButton source, GEvent event) { //_CODE_:btn_run:931812:
   //println("button1 - GButton event occured " + System.currentTimeMillis()%10000000 );
-} //_CODE_:btn_run:931812:
+ // int i;
+  /*for(i=0;i<10;i++){
+  stringAnterior=txt_ejecucion.getText();
+  txt_ejecucion.setText(stringAnterior + programa[i]);  
+                   }*/
+  txt_ejecucion.setText( ArregloVariables[1]);
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloSoundLine[i]);                                                                        /////////////////run
+  }
+  
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloScanVar[i]);
+  }
+  
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloSoundOper[i]);
+  }
+  
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloSoundVar[i]);
+  }
+  
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloVariables[i]);
+  }
+  
+  for(i=0;i<6;i++){  
+   stringAnterior=txt_ejecucion.getText();
+   txt_ejecucion.setText(stringAnterior + ArregloValores[i]);
+  }
+   } //_CODE_:btn_run:931812:
 
 public void btn_stop_click(GButton source, GEvent event) { //_CODE_:btn_stop:402121:
   //println("button2 - GButton event occured " + System.currentTimeMillis()%10000000 );
@@ -613,6 +677,10 @@ public void createGUI(){
   pnl_ejecucion.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   pnl_ejecucion.setOpaque(true);
   pnl_ejecucion.addEventHandler(this, "");
+  txt_ejecucion = new GTextField(this, 19, 100, 160, 403, G4P.SCROLLBARS_NONE);
+  txt_ejecucion.setOpaque(true);
+  txt_ejecucion.addEventHandler(this, "txt_ejecucion_change");
+  pnl_ejecucion.addControl(txt_ejecucion);
   pnl_compilador = new GPanel(this, 200, 0, 400, 600, "Compilador");
   pnl_compilador.setCollapsible(false);
   pnl_compilador.setDraggable(false);
@@ -628,7 +696,7 @@ public void createGUI(){
   btn_stop.setTextBold();
   btn_stop.setText("Stop");
   btn_stop.addEventHandler(this, "btn_stop_click");
-  txt_editor = new GTextArea(this, 17, 101, 360, 400, G4P.SCROLLBARS_NONE);
+  txt_editor = new GTextArea(this, 20, 101, 360, 400, G4P.SCROLLBARS_NONE);
   txt_editor.setOpaque(true);
   txt_editor.addEventHandler(this, "txt_editor_change");
   pnl_compilador.addControl(btn_run);
@@ -648,6 +716,7 @@ GTextField txt_spelling;
 GPanel Depurador; 
 GTextField txt_error; 
 GPanel pnl_ejecucion; 
+GTextField txt_ejecucion; 
 GPanel pnl_compilador; 
 GButton btn_run; 
 GButton btn_stop; 
